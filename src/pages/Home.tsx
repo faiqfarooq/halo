@@ -172,7 +172,7 @@ const Home: React.FC = () => {
             <Typography
               variant="body1"
               color="text.secondary"
-              sx={{ minWidth: "126px" }}
+              sx={{ minWidth: {xs:"110px",sm:"126px"} }}
             >
               {progress}% Complete
             </Typography>

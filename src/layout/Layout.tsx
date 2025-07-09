@@ -143,98 +143,100 @@ const Layout: React.FC = () => {
           zIndex: theme.zIndex.appBar,
         }}
       >
-        <Toolbar>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <Box
-                sx={{
-                  width: 24,
-                  height: 24,
-                  bgcolor: "primary.main",
-                  borderRadius: 1,
-                }}
-              />
-              <Typography
-                variant="h6"
-                sx={{ color: "text.primary", fontWeight: 600 }}
-              >
-                Halo Tutor
-              </Typography>
-            </Box>
-          </Link>
-          <Box sx={{ flexGrow: 1 }} />
-
-          {/* Desktop Navigation */}
-          {!isMobile && (
-            <>
-              <Box sx={{ display: "flex", gap: 1 }}>
-                {navigationItems.map((item) => (
-                  <Link
-                    key={item.label}
-                    to={item.path}
-                    style={{
-                      textDecoration: "none",
-                      color: isActiveLink(item.path)
-                        ? "#283643"
-                        : theme.palette.text.secondary,
-                      padding: "8px 16px",
-                      borderRadius: "4px",
-                      transition: "color 0.2s ease-in-out",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "flex-end",
-                    alignItems: "center",
+        <Container maxWidth="xl">
+          <Toolbar>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <img
+                  src="/logo.svg"
+                  alt="Halo Tutor Logo"
+                  style={{
+                    width: 28,
+                    height: 28,
                   }}
+                />
+                <Typography
+                  variant="h6"
+                  sx={{ color: "text.primary", fontWeight: 600 }}
                 >
-                  <Button
-                    color="inherit"
-                    sx={{
-                      color: "text.primary",
-                      backgroundColor: "#f5f5f5",
-                      minWidth: "80px",
-                      borderRadius: 2,
-                      fontWeight: 500,
-                      fontSize: "1rem",
-                      "&:hover": {
-                        backgroundColor: "#e0e0e0",
-                      },
-                    }}
-                    onClick={handleLoginClick}
-                  >
-                    Login
-                  </Button>
-                  <Button
-                    variant="contained"
-                    sx={{ borderRadius: 2, ml: 1 }}
-                    onClick={handleSignUpClick}
-                  >
-                    Sign Up
-                  </Button>
-                </Box>
+                  Halo Tutor
+                </Typography>
               </Box>
-            </>
-          )}
+            </Link>
+            <Box sx={{ flexGrow: 1 }} />
 
-          {/* Mobile Menu Button */}
-          {isMobile && (
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ color: "text.primary" }}
-            >
-              <MenuIcon />
-            </IconButton>
-          )}
-        </Toolbar>
+            {/* Desktop Navigation */}
+            {!isMobile && (
+              <>
+                <Box sx={{ display: "flex", gap: 1 }}>
+                  {navigationItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      to={item.path}
+                      style={{
+                        textDecoration: "none",
+                        color: isActiveLink(item.path)
+                          ? "#283643"
+                          : theme.palette.text.secondary,
+                        padding: "8px 16px",
+                        borderRadius: "4px",
+                        transition: "color 0.2s ease-in-out",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Button
+                      color="inherit"
+                      sx={{
+                        color: "text.primary",
+                        backgroundColor: "#f5f5f5",
+                        minWidth: "80px",
+                        borderRadius: 2,
+                        fontWeight: 500,
+                        fontSize: "1rem",
+                        "&:hover": {
+                          backgroundColor: "#e0e0e0",
+                        },
+                      }}
+                      onClick={handleLoginClick}
+                    >
+                      Login
+                    </Button>
+                    <Button
+                      variant="contained"
+                      sx={{ borderRadius: 2, ml: 1 }}
+                      onClick={handleSignUpClick}
+                    >
+                      Sign Up
+                    </Button>
+                  </Box>
+                </Box>
+              </>
+            )}
+
+            {/* Mobile Menu Button */}
+            {isMobile && (
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ color: "text.primary" }}
+              >
+                <MenuIcon />
+              </IconButton>
+            )}
+          </Toolbar>
+        </Container>
       </AppBar>
 
       {/* Mobile Drawer */}

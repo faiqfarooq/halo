@@ -37,7 +37,7 @@ const AIFeedbackSection: React.FC = () => {
                 zIndex: 1,
                 borderRadius: "50%",
                 position: "absolute",
-                top: { xs: "12%", sm: "18%", md: "22%" },
+                top: { xs: "32px", sm: "40px", md: "22%" },
                 right: "5%",
               }}
             />
@@ -83,7 +83,13 @@ const AIFeedbackSection: React.FC = () => {
               a big difference. Would you like me to share some resources on
               that?
             </Typography>
-            <Box sx={{ display: "flex", gap: 1 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
+                gap: 1,
+              }}
+            >
               <Button
                 variant="contained"
                 size="small"

@@ -258,7 +258,7 @@ const NavigationControls: React.FC<{
             borderRadius: 2,
             bgcolor:
               allQuestionsAnswered && !isSubmitted
-                ? "success.main"
+                ? "primary.main"
                 : "grey.400",
             minWidth: { xs: "80px", md: "100px" },
             fontSize: { xs: "0.8rem", md: "0.875rem" },
@@ -266,7 +266,7 @@ const NavigationControls: React.FC<{
             "&:hover": {
               bgcolor:
                 allQuestionsAnswered && !isSubmitted
-                  ? "success.dark"
+                  ? "primary.dark"
                   : "grey.400",
             },
             "&:disabled": {
@@ -292,7 +292,7 @@ const NavigationControls: React.FC<{
             },
           }}
         >
-          Next
+          {`Next >`}
         </Button>
       )}
     </Box>
